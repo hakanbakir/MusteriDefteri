@@ -9,6 +9,15 @@ Veritabanı: **SQLite** (modernc.org/sqlite, CGO gerektirmez)
 
 ---
 
+## Ekran Görüntüleri
+
+![Dashboard](screenshots/Ekran%20g%C3%B6r%C3%BCnt%C3%BCs%C3%BC%202026-06-10%20195318.png)
+![Müşteri Listesi](screenshots/Ekran%20g%C3%B6r%C3%BCnt%C3%BCs%C3%BC%202026-06-10%20195334.png)
+![İşlem Girişi](screenshots/Ekran%20g%C3%B6r%C3%BCnt%C3%BCs%C3%BC%202026-06-10%20195349.png)
+![Ayarlar](screenshots/Ekran%20g%C3%B6r%C3%BCnt%C3%BCs%C3%BC%202026-06-10%20195409.png)
+
+---
+
 ## İçindekiler
 
 - [Özellikler](#özellikler)
