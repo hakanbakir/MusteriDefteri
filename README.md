@@ -99,7 +99,8 @@ Backend `:8080` portunda HTTP sunucusu başlatır ve WebView2 penceresi açar.
 - `version.txt` dosyasındaki patch numarasını 1 artırır
 - Frontend build alır (`VITE_APP_VERSION` ortam değişkeni ile)
 - Go binary derler (`-H=windowsgui` ile terminal penceresi gizlenir)
-- Çıktı: `build\bin\MusteriDefteri.exe`
+-   Çıktı: `build\bin\MusteriDefteri.exe`
+-   İkon: `rcedit` ile build sonrası EXE'ye eklenir (otomatik indirilir)
 
 ### Manuel derleme
 
