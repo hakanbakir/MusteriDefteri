@@ -1,0 +1,60 @@
+{
+  "RT_GROUP_ICON": {
+    "APP": {
+      "0000": [
+        "icon.png"
+      ]
+    }
+  },
+  "RT_MANIFEST": {
+    "#1": {
+      "0409": {
+        "identity": {
+          "name": "MusteriDefteri",
+          "version": "0.3.0.0"
+        },
+        "description": "Musteri Defteri Desktop Application",
+        "minimum-os": "win7",
+        "execution-level": "as invoker",
+        "ui-access": false,
+        "auto-elevate": false,
+        "dpi-awareness": "system",
+        "disable-theming": false,
+        "disable-window-filtering": false,
+        "high-resolution-scrolling-aware": false,
+        "ultra-high-resolution-scrolling-aware": false,
+        "long-path-aware": false,
+        "printer-driver-isolation": false,
+        "gdi-scaling": false,
+        "segment-heap": false,
+        "use-common-controls-v6": true
+      }
+    }
+  },
+  "RT_VERSION": {
+    "#1": {
+      "0000": {
+        "fixed": {
+          "file_version": "0.3.0.0",
+          "product_version": "0.3.0.0"
+        },
+        "info": {
+          "0409": {
+            "Comments": "Musteri bazli satis, tahsilat ve iade islemleri",
+            "CompanyName": "",
+            "FileDescription": "Musteri Defteri Desktop Application",
+            "FileVersion": "0.3.0.0",
+            "InternalName": "MusteriDefteri",
+            "LegalCopyright": "",
+            "LegalTrademarks": "",
+            "OriginalFilename": "MusteriDefteri.exe",
+            "PrivateBuild": "",
+            "ProductName": "Musteri Defteri",
+            "ProductVersion": "0.3.0.0",
+            "SpecialBuild": ""
+          }
+        }
+      }
+    }
+  }
+}
