@@ -14,8 +14,25 @@ npm run build
 if ($LASTEXITCODE -ne 0) { Pop-Location; exit $LASTEXITCODE }
 Pop-Location
 
-go build -ldflags "-s -w -H=windowsgui" -o (Join-Path $PSScriptRoot "build/bin/MusteriDefteri.exe") .
-if ($LASTEXITCODE -eq 0) {
-    Write-Host "Build OK: v$newV" -ForegroundColor Green
+$exe = Join-Path $PSScriptRoot "build/bin/MusteriDefteri.exe"
+go build -ldflags "-s -w -H=windowsgui" -o $exe .
+if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+
+$rcedit = Join-Path $PSScriptRoot "build/rcedit.exe"
+if (-not (Test-Path $rcedit)) {
+    Write-Host "Downloading rcedit.exe ..." -ForegroundColor Yellow
+    $null = New-Item -ItemType Directory -Force -Path (Join-Path $PSScriptRoot "build")
+    Invoke-WebRequest -Uri "https://github.com/electron/rcedit/releases/download/v2.0.0/rcedit-x64.exe" -OutFile $rcedit -UseBasicParsing
 }
-exit $LASTEXITCODE
+
+if (Test-Path $rcedit) {
+    & $rcedit $exe --set-icon (Join-Path $PSScriptRoot "winres/icon.ico")
+    & $rcedit $exe --set-version-string "ProductName" "Musteri Defteri"
+    & $rcedit $exe --set-version-string "FileDescription" "Musteri Defteri Desktop Application"
+    & $rcedit $exe --set-version-string "LegalCopyright" "Hakan Bakır 2026"
+    & $rcedit $exe --set-version-string "ProductVersion" "$newV.0"
+    & $rcedit $exe --set-version-string "FileVersion" "$newV.0"
+}
+
+Write-Host "Build OK: v$newV" -ForegroundColor Green
+exit 0

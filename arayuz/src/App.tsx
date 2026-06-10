@@ -44,6 +44,7 @@ function LisansModal({ acik, kapat }: { acik: boolean; kapat: () => void }) {
         </div>
         <div className="space-y-4 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
           <p><strong>Müşteri Defteri</strong> — Copyright (C) 2026 <strong>Hakan Bakır</strong></p>
+          <p>Kaynak kod: <a href="https://github.com/hakanbakir/MusteriDefteri" target="_blank" rel="noopener noreferrer" className="text-blue-600 underline dark:text-blue-400">github.com/hakanbakir/MusteriDefteri</a></p>
           <p>Bu program özgür bir yazılımdır: GNU Genel Kamu Lisansı'nın (GNU General Public License) 3. sürümü veya (isteğe bağlı olarak) daha sonraki bir sürümünün koşulları altında yeniden dağıtabilir ve/veya değiştirebilirsiniz.</p>
           <p>Bu program, yararlı olması umuduyla dağıtılmaktadır, ancak HERHANGİ BİR GARANTİ OLMADAN; belirli bir AMACA UYGUNLUK veya SATILABİLİRLİK garantisi olmadan dağıtılmaktadır. Ayrıntılar için GNU Genel Kamu Lisansı'na bakın.</p>
           <p>Bu programla birlikte GNU Genel Kamu Lisansı'nın bir kopyasını almış olmalısınız. Eğer almadıysanız, <a href="https://www.gnu.org/licenses/" target="_blank" rel="noopener noreferrer" className="text-blue-600 underline dark:text-blue-400">https://www.gnu.org/licenses/</a> adresini ziyaret edin.</p>
@@ -173,7 +174,7 @@ function LoginSayfasi({ setKullanici, beniHatirla, lisansAc }: { setKullanici: (
           </div>
         </div>
       </div>
-        <p className="absolute bottom-4 left-0 right-0 text-center text-[13px] text-slate-500"><button onClick={lisansAc} className="cursor-pointer transition hover:text-slate-800 focus:outline-none focus:underline">Müşteri Defteri v0.3.0 — GNU Genel Kamu Lisansı v3 ile lisanslanmıştır (GNU GPLv3). Hakan Bakır ©2026</button></p>
+        <p className="absolute bottom-4 left-0 right-0 text-center text-[13px] text-slate-500"><button onClick={lisansAc} className="cursor-pointer transition hover:text-slate-800 focus:outline-none focus:underline">Müşteri Defteri v0.4.0 — GNU Genel Kamu Lisansı v3 ile lisanslanmıştır (GNU GPLv3). Hakan Bakır ©2026</button></p>
     </div>
   );
 }
@@ -272,7 +273,7 @@ export default function App() {
             Çıkış Yap
           </button>
         </div>
-        <div className={`border-t p-3 text-[10px] ${yanBarStil.divider} ${yanBarStil.aciklama}`}><button onClick={() => setLisansAcik(true)} className="cursor-pointer text-left hover:text-slate-700 dark:hover:text-slate-300">Müşteri Defteri 2026© v0.3.0</button></div>
+        <div className={`border-t p-3 text-[10px] ${yanBarStil.divider} ${yanBarStil.aciklama}`}><button onClick={() => setLisansAcik(true)} className="cursor-pointer text-left hover:text-slate-700 dark:hover:text-slate-300">Müşteri Defteri 2026© v0.4.0</button></div>
       </aside>
       <main className="flex min-w-0 flex-1 flex-col">
         <header className={`flex h-[72px] items-center justify-between pl-5 pr-2 ${ustBarStil.bg} ${ustBarStil.border} ${ustBarStil.text}`}>
