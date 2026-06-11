@@ -27,11 +27,6 @@ if (-not (Test-Path $rcedit)) {
 
 if (Test-Path $rcedit) {
     & $rcedit $exe --set-icon (Join-Path $PSScriptRoot "winres/icon.ico")
-    & $rcedit $exe --set-version-string "ProductName" "Musteri Defteri"
-    & $rcedit $exe --set-version-string "FileDescription" "Musteri Defteri Desktop Application"
-    & $rcedit $exe --set-version-string "LegalCopyright" "Hakan Bakır 2026"
-    & $rcedit $exe --set-version-string "ProductVersion" "$newV.0"
-    & $rcedit $exe --set-version-string "FileVersion" "$newV.0"
 }
 
 Write-Host "Build OK: v$newV" -ForegroundColor Green

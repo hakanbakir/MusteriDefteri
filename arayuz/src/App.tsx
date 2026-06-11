@@ -174,7 +174,7 @@ function LoginSayfasi({ setKullanici, beniHatirla, lisansAc }: { setKullanici: (
           </div>
         </div>
       </div>
-        <p className="absolute bottom-4 left-0 right-0 text-center text-[13px] text-slate-500"><button onClick={lisansAc} className="cursor-pointer transition hover:text-slate-800 focus:outline-none focus:underline">Müşteri Defteri v0.4.0 — GNU Genel Kamu Lisansı v3 ile lisanslanmıştır (GNU GPLv3). Hakan Bakır ©2026</button></p>
+        <p className="absolute bottom-4 left-0 right-0 text-center text-[13px] text-slate-500"><button onClick={lisansAc} className="cursor-pointer transition hover:text-slate-800 focus:outline-none focus:underline">Müşteri Defteri v0.4.3 — GNU Genel Kamu Lisansı v3 ile lisanslanmıştır (GNU GPLv3). Hakan Bakır ©2026</button></p>
     </div>
   );
 }
@@ -273,7 +273,7 @@ export default function App() {
             Çıkış Yap
           </button>
         </div>
-        <div className={`border-t p-3 text-[10px] ${yanBarStil.divider} ${yanBarStil.aciklama}`}><button onClick={() => setLisansAcik(true)} className="cursor-pointer text-left hover:text-slate-700 dark:hover:text-slate-300">Müşteri Defteri 2026© v0.4.0</button></div>
+        <div className={`border-t p-3 text-[10px] ${yanBarStil.divider} ${yanBarStil.aciklama}`}><button onClick={() => setLisansAcik(true)} className="cursor-pointer text-left hover:text-slate-700 dark:hover:text-slate-300">Müşteri Defteri 2026© v0.4.3</button></div>
       </aside>
       <main className="flex min-w-0 flex-1 flex-col">
         <header className={`flex h-[72px] items-center justify-between pl-5 pr-2 ${ustBarStil.bg} ${ustBarStil.border} ${ustBarStil.text}`}>
@@ -985,7 +985,7 @@ th{background:#10b981;color:#fff;font-size:12px;font-weight:700}
 ${(() => { try { const a = localStorage.getItem("isletme_adi") || ""; return a ? `<div class="isletme">${a}</div>` : ""; } catch { return ""; } })()}
 <h2>Müşteri Kartı</h2>
 <table><thead><tr><th>Alan</th><th>Değer</th></tr></thead><tbody>`;
-    for (const [a, d] of [["Ad Soyad / Ünvan", cari?.unvan ?? ""], ["Telefon", cari?.telefon ?? ""], ["E-posta", cari?.eposta ?? ""], ["Adres", cari?.adres ?? ""], ["Vergi No", cari?.vergiNo ?? ""], ["Notlar", cari?.notlar ?? "-"], ["Bakiye", sf(cari?.bakiye ?? 0)]]) {
+    for (const [a, d] of [["Ad Soyad / Ünvan", cari?.unvan ?? ""], ["Telefon", cari?.telefon ?? ""], ["E-posta", cari?.eposta ?? ""], ["Adres", cari?.adres ?? ""], ["Vergi No", cari?.vergiNo ?? ""], ["Notlar", cari?.notlar ?? "-"], ["Toplam Borç", sf(cari?.bakiye ?? 0)]]) {
       html += `<tr><td><strong>${a}</strong></td><td>${d}</td></tr>`;
     }
     html += `</tbody></table>
@@ -994,7 +994,7 @@ ${(() => { try { const a = localStorage.getItem("isletme_adi") || ""; return a ?
     for (const h of hareketler.slice().reverse()) {
       html += `<tr><td>${h.tarih.replace("T", " ")}</td><td>${h.belgeTuru}</td><td>${h.islemTuru}</td><td>${h.aciklama || "-"}</td><td class="sag">${sf(h.tutar)}</td></tr>`;
     }
-    html += `<tr style="font-weight:700;border-top:2px solid #222"><td colspan="4" style="text-align:right">Toplam:</td><td class="sag">${sf(cari?.bakiye ?? 0)}</td></tr></tbody></table>
+    html += `<tr style="font-weight:700;border-top:2px solid #222"><td colspan="4" style="text-align:right">Toplam Borç:</td><td class="sag">${sf(cari?.bakiye ?? 0)}</td></tr></tbody></table>
 <script>window.onload=function(){setTimeout(function(){window.print()},500)}<\/script></body></html>`;
     const w = window.open("", "_blank");
     if (w) {
