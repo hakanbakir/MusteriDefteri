@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { createPortal } from "react-dom";
 import type { ReactNode } from "react";
-import { Activity, ArrowLeft, BarChart3, ChevronLeft, ChevronRight, ClipboardList, Clock, CreditCard, FileSpreadsheet, FileText, Landmark, Mail, MapPin, Pencil, Phone, RotateCcw, Search, Settings, TrendingUp, Trash2, Users, Wallet, X } from "lucide-react";
+import { Activity, ArrowLeft, BarChart3, ChevronLeft, ChevronRight, ClipboardList, Clock, CreditCard, FileSpreadsheet, FileText, HardDrive, Landmark, Mail, MapPin, Pencil, Phone, RotateCcw, Search, Settings, TrendingUp, Trash2, Users, Wallet, X } from "lucide-react";
 import openBookLogo from "./assets/open-book-logo.png";
 import { api } from "./servisler/api";
 import type { Alis, CariHareket, CariHesap, Dashboard, IslemTuruTipi, Kullanici, Log, Satis, SayfaliLog, SayfaliSonuc } from "./turler";
@@ -1353,7 +1353,7 @@ function AyarlarSayfasi({
           <div className={`${kullanici.rol === "admin" ? "lg:col-span-2 col-span-1" : "lg:col-span-3 col-span-1"} space-y-5`}>
             <div className="rounded-xl border border-[var(--ui-border)] bg-gradient-to-br from-slate-100 via-white to-blue-100/60 p-5 shadow-sm dark:border-[var(--ui-dark-border)] dark:from-slate-900 dark:via-slate-800 dark:to-blue-950/40">
               <div className="flex items-center justify-between">
-                <p className="text-sm font-semibold text-slate-800 dark:text-slate-100">Kullanıcı ayarları</p>
+                <div className="flex items-center gap-2"><Settings size={16} className="text-slate-500 dark:text-slate-400" /><p className="text-sm font-semibold text-slate-800 dark:text-slate-100">Kullanıcı Ayarları</p></div>
                 <span className="rounded-full bg-slate-100 px-2.5 py-0.5 text-[11px] font-medium text-slate-500 dark:bg-slate-800 dark:text-slate-400">{kullanici.rol === "admin" ? "Admin" : "Kullanıcı"}</span>
               </div>
 
@@ -1461,8 +1461,8 @@ function AyarlarSayfasi({
           {kullanici.rol === "admin" && <div className="space-y-5">
             <div className="rounded-xl border border-[var(--ui-border)] bg-gradient-to-br from-slate-100 via-white to-blue-100/60 p-5 shadow-sm dark:border-[var(--ui-dark-border)] dark:from-slate-900 dark:via-slate-800 dark:to-blue-950/40">
               <div className="flex items-center gap-2">
-                <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-white/80 shadow-sm dark:bg-slate-700"><Landmark size={16} className="text-slate-500 dark:text-slate-400" /></div>
-                <p className="text-sm font-semibold text-slate-800 dark:text-slate-100">İşletme Bilgileri</p>
+                <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-white/80 shadow-sm dark:bg-slate-700"><HardDrive size={16} className="text-slate-500 dark:text-slate-400" /></div>
+                <p className="text-sm font-semibold text-slate-800 dark:text-slate-100">Yedek Ayarları</p>
               </div>
               <div className="mt-5 space-y-4">
                 <label className="flex cursor-pointer items-center gap-2.5 text-sm">
