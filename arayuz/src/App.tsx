@@ -1033,7 +1033,7 @@ ${(() => { try { const a = localStorage.getItem("isletme_adi") || ""; return a ?
           <Users size={320} className="text-slate-400 dark:text-slate-500" />
         </div>
 
-        <div className="flex items-start justify-between gap-5 px-6 py-6 relative z-10">
+        <div className="flex items-start justify-between gap-5 px-6 pt-4 pb-6 relative z-10">
           <div className="flex items-center gap-4">
             <div>
               <div className="flex items-center gap-2">
