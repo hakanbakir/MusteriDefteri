@@ -11,7 +11,7 @@
       "0409": {
         "identity": {
           "name": "MusteriDefteri",
-          "version": "0.5.15.0"
+          "version": "0.5.16.0"
         },
         "description": "Musteri Defteri Desktop Application",
         "minimum-os": "win7",
@@ -35,22 +35,22 @@
     "#1": {
       "0000": {
         "fixed": {
-          "file_version": "0.5.15.0",
-          "product_version": "0.5.15.0"
+          "file_version": "0.5.16.0",
+          "product_version": "0.5.16.0"
         },
         "info": {
           "0409": {
             "Comments": "Musteri bazli satis, tahsilat ve iade islemleri",
             "CompanyName": "",
             "FileDescription": "Musteri Defteri Desktop Application",
-            "FileVersion": "0.5.15.0",
+            "FileVersion": "0.5.16.0",
             "InternalName": "MusteriDefteri",
             "LegalCopyright": "",
             "LegalTrademarks": "",
             "OriginalFilename": "MusteriDefteri.exe",
             "PrivateBuild": "",
             "ProductName": "Musteri Defteri",
-            "ProductVersion": "0.5.15.0",
+            "ProductVersion": "0.5.16.0",
             "SpecialBuild": ""
           }
         }
