@@ -526,7 +526,8 @@ ${ia() ? `<div class="isletme">${ia()}</div>` : ""}
         <div className="-mx-5 border-t border-slate-100 dark:border-slate-800" />
         <div className="-mx-5 overflow-x-auto rounded-b-xl">
           <div className="flex items-center justify-between px-5 pb-3 pt-3">
-            <div className="ml-auto flex items-center gap-3">
+            <p className="text-[11px] text-slate-400">{filtreli.length} kayıt</p>
+            <div className="flex items-center gap-3">
               <div className="flex items-center gap-2">
                 <button disabled={dSayfa <= 1} onClick={() => setDSayfa(dSayfa - 1)} className="rounded-md border border-slate-200 p-1.5 disabled:opacity-40 dark:border-slate-700"><ChevronLeft size={14} /></button>
                 <span className="min-w-16 text-center text-xs text-slate-500">{dSayfa} / {dToplamSayfa}</span>
@@ -544,7 +545,6 @@ ${ia() ? `<div class="isletme">${ia()}</div>` : ""}
               </div>
             </div>
           </div>
-          <div className="px-5 pb-2"><p className="text-[11px] text-slate-400">{filtreli.length} kayıt</p></div>
           <div className={tabloStil.kapsayici}>
           <table className="w-full text-sm">
             <thead>
@@ -573,7 +573,8 @@ ${ia() ? `<div class="isletme">${ia()}</div>` : ""}
           </table>
           </div>
           <div className="flex items-center justify-between px-5 pb-3 pt-3">
-            <div className="ml-auto flex items-center gap-3">
+            <p className="text-[11px] text-slate-400">{filtreli.length} kayıt</p>
+            <div className="flex items-center gap-3">
               <div className="flex items-center gap-2">
                 <button disabled={dSayfa <= 1} onClick={() => setDSayfa(dSayfa - 1)} className="rounded-md border border-slate-200 p-1.5 disabled:opacity-40 dark:border-slate-700"><ChevronLeft size={14} /></button>
                 <span className="min-w-16 text-center text-xs text-slate-500">{dSayfa} / {dToplamSayfa}</span>
@@ -663,7 +664,8 @@ function CariSayfasi({ onCariAc }: { onCariAc: (id: number) => void }) {
       >
         <div className="-mx-5 border-t border-slate-100 dark:border-slate-800" />
         <div className="flex items-center justify-between pt-4 pb-3">
-          <div className="ml-auto flex items-center gap-3">
+          <p className="text-[11px] text-slate-400">{sonuc.toplam} kayıt</p>
+          <div className="flex items-center gap-3">
             <div className="flex items-center gap-2">
               <button disabled={sayfa <= 1} onClick={() => setSayfa(sayfa - 1)} className="rounded-md border border-slate-200 p-1.5 disabled:opacity-40 dark:border-slate-700"><ChevronLeft size={14} /></button>
               <span className="min-w-16 text-center text-xs text-slate-500">{sayfa} / {Math.max(1, Math.ceil(sonuc.toplam / limit))}</span>
@@ -681,7 +683,6 @@ function CariSayfasi({ onCariAc }: { onCariAc: (id: number) => void }) {
             </div>
           </div>
         </div>
-        <div className="px-5 pb-2"><p className="text-[11px] text-slate-400">{sonuc.toplam} kayıt</p></div>
         <div className={tabloStil.kapsayici}>
         <table className="w-full text-sm">
           <thead>
@@ -709,7 +710,8 @@ function CariSayfasi({ onCariAc }: { onCariAc: (id: number) => void }) {
         </table>
         </div>
         <div className="flex items-center justify-between px-1 pt-3">
-          <div className="ml-auto flex items-center gap-3">
+          <p className="text-[11px] text-slate-400">{sonuc.toplam} kayıt</p>
+          <div className="flex items-center gap-3">
             <div className="flex items-center gap-2">
               <button disabled={sayfa <= 1} onClick={() => setSayfa(sayfa - 1)} className="rounded-md border border-slate-200 p-2 disabled:opacity-40 dark:border-slate-700"><ChevronLeft size={16} /></button>
               <span className="min-w-16 text-center text-sm text-slate-500">{sayfa} / {Math.max(1, Math.ceil(sonuc.toplam / limit))}</span>
