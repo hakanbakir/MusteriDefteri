@@ -1547,7 +1547,7 @@ function LoglarSayfasi() {
   };
   const filtrelenmis = arama ? loglar.filter((l) => `${l.kullanici} ${l.islem} ${l.detay}`.toLocaleLowerCase("tr-TR").includes(arama.toLocaleLowerCase("tr-TR"))) : loglar;
   return (
-    <Panel baslik="Loglar" aksiyon={toplam > 0 ? <button onClick={silTumunu} disabled={siliyor} className="inline-flex h-7 items-center gap-1 rounded-md bg-red-50/40 px-2.5 text-xs font-medium text-red-600 transition hover:bg-red-100 disabled:opacity-50">{siliyor ? "Siliniyor..." : "Tüm Logları Sil"}</button> : undefined}>
+    <Panel baslik={<div className="flex items-center gap-3"><div className="flex h-8 w-8 items-center justify-center rounded-lg bg-slate-100 dark:bg-slate-800"><Clock size={16} className="text-slate-500 dark:text-slate-400" /></div><p className="text-sm font-semibold text-slate-800 dark:text-slate-100">Loglar</p></div>} aksiyon={toplam > 0 ? <button onClick={silTumunu} disabled={siliyor} className="inline-flex h-7 items-center gap-1 rounded-md bg-red-50/40 px-2.5 text-xs font-medium text-red-600 transition hover:bg-red-100 disabled:opacity-50">{siliyor ? "Siliniyor..." : "Tüm Logları Sil"}</button> : undefined}>
       <div className="space-y-3">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
