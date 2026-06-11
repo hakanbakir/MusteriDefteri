@@ -486,8 +486,8 @@ func (u *Uygulama) BaslangicYedekKontrol() {
 		u.YedekAl()
 		return
 	}
-	son, err := time.Parse("2006-01-02 15:04:05", sonStr)
-	if err != nil || time.Since(son) > time.Duration(saat)*time.Hour {
+	son, err := time.ParseInLocation("2006-01-02 15:04:05", sonStr, time.Local)
+	if err != nil || time.Since(son) >= time.Duration(saat)*time.Hour {
 		u.YedekAl()
 	}
 }
