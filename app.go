@@ -357,14 +357,39 @@ func (u *Uygulama) AyarKaydet(anahtar string, deger string) error {
 	}
 	err := u.servis.AyarKaydet(u.ctx, anahtar, deger)
 	if err == nil {
-		kisa := deger
-		if len(kisa) > 50 {
-			kisa = kisa[:50] + "..."
+		islem := "Ayar Kaydet"
+		detay := fmt.Sprintf("%s = %s", anahtar, deger)
+		switch anahtar {
+		case "yedek_al":
+			if deger == "true" {
+				islem = "Yedek Alma Açıldı"
+			} else {
+				islem = "Yedek Alma Kapatıldı"
+			}
+			detay = ""
+		case "yedek_aralik":
+			islem = "Yedek Alma Sıklığı"
+			switch deger {
+			case "1":
+				detay = "1 Saat Yapıldı"
+			case "24":
+				detay = "24 Saat Yapıldı"
+			case "168":
+				detay = "1 Hafta Yapıldı"
+			default:
+				detay = deger + " Saat Yapıldı"
+			}
+		default:
+			kisa := deger
+			if len(kisa) > 50 {
+				kisa = kisa[:50] + "..."
+			}
+			if kisa == "" {
+				kisa = "(temizlendi)"
+			}
+			detay = fmt.Sprintf("%s = %s", anahtar, kisa)
 		}
-		if kisa == "" {
-			kisa = "(temizlendi)"
-		}
-		u.servis.LogKaydet(u.ctx, u.currentUser, "Ayar Kaydet", fmt.Sprintf("%s = %s", anahtar, kisa))
+		u.servis.LogKaydet(u.ctx, u.currentUser, islem, detay)
 	}
 	return err
 }
