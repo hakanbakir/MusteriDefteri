@@ -39,7 +39,7 @@ func main() {
 
 	time.Sleep(500 * time.Millisecond)
 
-	openWindow("http://localhost:8080", "Müşteri Defteri", 1360, 860)
+	openWindow("http://127.0.0.1:8080", "Müşteri Defteri", 1360, 860)
 
 	ctxShutdown, cancel := context.WithTimeout(context.Background(), 3*time.Second)
 	defer cancel()
