@@ -1034,9 +1034,7 @@ ${(() => { try { const a = localStorage.getItem("isletme_adi") || ""; return a ?
         <div className="pointer-events-none absolute -bottom-8 -right-8 select-none opacity-[0.07] dark:opacity-[0.1]">
           <Users size={320} className="text-slate-400 dark:text-slate-500" />
         </div>
-        <div className="pointer-events-none absolute -left-6 -top-6 select-none opacity-[0.05] dark:opacity-[0.08]">
-          <BarChart3 size={200} className="text-blue-400 dark:text-blue-600" />
-        </div>
+
         <div className="flex items-start justify-between gap-5 px-6 py-6 relative z-10">
           <div className="flex items-center gap-4">
             <div>
