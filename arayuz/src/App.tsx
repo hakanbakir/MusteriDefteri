@@ -1039,15 +1039,12 @@ ${(() => { try { const a = localStorage.getItem("isletme_adi") || ""; return a ?
         </div>
         <div className="flex items-start justify-between gap-5 px-6 py-6 relative z-10">
           <div className="flex items-center gap-4">
-            <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-100 to-white shadow-md ring-1 ring-blue-200 dark:from-blue-900/60 dark:to-slate-900 dark:ring-blue-900/60">
-              <Users size={28} className="text-slate-400 dark:text-slate-500" />
-            </div>
             <div>
               <div className="flex items-center gap-2">
                 <span className="rounded-full bg-slate-200 px-3 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-slate-600 shadow-sm dark:bg-slate-700 dark:text-slate-300">Müşteri Kartı</span>
                 <button type="button" onClick={() => { setDuzenlenenCari({ ...cari! }); setDuzenlemeAcik(true); }} className="inline-flex h-7 w-7 items-center justify-center rounded-full border border-slate-200 bg-white/80 text-slate-400 shadow-sm backdrop-blur-sm transition-colors hover:bg-white hover:text-slate-600 dark:border-slate-700 dark:bg-slate-800/80 dark:text-slate-500 dark:hover:bg-slate-700 dark:hover:text-slate-300" title="Düzenle"><Pencil size={12} /></button>
               </div>
-              <h2 className="mt-1.5 text-2xl font-black tracking-tight text-slate-900 dark:text-slate-100">{cari.unvan}</h2>
+              <h2 className="mt-1.5 text-2xl font-bold tracking-tight text-slate-900 dark:text-slate-100">{cari.unvan}</h2>
               <div className="mt-2.5 flex flex-wrap items-center gap-x-4 gap-y-1.5 text-xs text-slate-500">
                 {cari.telefon && <span className="inline-flex items-center gap-1.5"><Phone size={13} /> {cari.telefon}</span>}
                 {cari.eposta && <span className="inline-flex items-center gap-1.5"><Mail size={13} /> {cari.eposta}</span>}
