@@ -263,6 +263,9 @@ func (s *TicariServis) ExcelImport(ctx context.Context, dosyaYolu string) error 
 	bakiyeIdx, bakiyeOk := colMap["bakiye"]
 	olusturmaIdx, olusturmaOk := colMap["olusturma"]
 
+	hareketRows, hareketErr := f.GetRows("Hareketler")
+	hareketVar := hareketErr == nil && len(hareketRows) >= 2
+
 	mevcutlar, _ := s.depo.TumCarileriListele(ctx)
 	mevcutMap := make(map[string]bool, len(mevcutlar))
 	for _, c := range mevcutlar {
@@ -304,8 +307,8 @@ func (s *TicariServis) ExcelImport(ctx context.Context, dosyaYolu string) error 
 		}
 		importEdilen++
 
-		// Importtan gelen bakiye varsa başlangıç hareketi oluştur
-		if bakiyeOk && bakiyeIdx < len(row) {
+		// Hareketler sayfası yoksa bakiyeden devir hareketi oluştur
+		if !hareketVar && bakiyeOk && bakiyeIdx < len(row) {
 			bakiye := 0.0
 			fmt.Sscanf(row[bakiyeIdx], "%f", &bakiye)
 			if bakiye > 0 {
@@ -350,8 +353,7 @@ func (s *TicariServis) ExcelImport(ctx context.Context, dosyaYolu string) error 
 		log.Printf("UYARI: Excel'de case-insensitive aynı isme sahip %d kayıt atlandı (büyük/küçük harf farkı olan aynı isimler)", atlananDublicate)
 	}
 	// Hareketleri içe aktar (varsa)
-	hareketRows, err := f.GetRows("Hareketler")
-	if err == nil && len(hareketRows) >= 2 {
+	if hareketVar {
 		hHeaders := hareketRows[0]
 		hColMap := make(map[string]int)
 		for i, h := range hHeaders {
