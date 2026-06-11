@@ -653,7 +653,7 @@ function CariSayfasi({ onCariAc }: { onCariAc: (id: number) => void }) {
     <div className="space-y-4">
       <OnayModal acik={silOnayCariId != null} baslik="Cari Sil" mesaj="Silmek istediğinizden emin misiniz? Yaptığınız işlem geri döndürülemez.!!" onayla={silOnayla} iptal={() => setSilOnayCariId(null)} />
       <Panel
-        baslik="Müşteriler"
+        baslik={<div className="flex items-center gap-3"><div className="flex h-8 w-8 items-center justify-center rounded-lg bg-slate-100 dark:bg-slate-800"><Users size={16} className="text-slate-500 dark:text-slate-400" /></div><div><p className="text-sm font-semibold text-slate-800 dark:text-slate-100">Müşteriler</p><p className="text-[11px] text-slate-400">{sonuc.toplam} kayıt</p></div></div>}
         aksiyon={
           <div className="flex items-center gap-3">
             <AramaKutusu value={arama} onChange={setArama} placeholder="Unvan veya telefon ara" />
@@ -661,7 +661,8 @@ function CariSayfasi({ onCariAc }: { onCariAc: (id: number) => void }) {
           </div>
         }
       >
-        <div className="flex items-center justify-between pb-3">
+        <div className="-mx-5 border-t border-slate-100 dark:border-slate-800" />
+        <div className="flex items-center justify-between pt-4 pb-3">
           <span className="text-xs text-slate-500">{sonuc.toplam} kayıt</span>
           <div className="flex items-center gap-3">
             <div className="flex items-center gap-2">
