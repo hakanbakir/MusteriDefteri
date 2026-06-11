@@ -6,7 +6,7 @@ export const para = (deger: number) =>
 
 export function Panel({ baslik, aksiyon, children }: { baslik: ReactNode; aksiyon?: ReactNode; children: ReactNode }) {
   return (
-    <section className="border bg-gradient-to-br from-blue-50 via-white to-blue-50 shadow-panel dark:border-[var(--ui-dark-border)] dark:from-blue-950 dark:via-slate-900 dark:to-blue-900" style={{ borderColor: "var(--ui-border)" as string }}>
+    <section className="overflow-hidden rounded-xl border bg-gradient-to-br from-slate-100 via-white to-blue-100/60 shadow-sm dark:border-[var(--ui-dark-border)] dark:from-slate-900 dark:via-slate-800 dark:to-blue-950/40" style={{ borderColor: "var(--ui-border)" as string }}>
       <div className="flex min-h-16 items-center justify-between px-5 py-3">
         <h2 className="text-base font-semibold text-slate-900 dark:text-slate-100">{baslik}</h2>
         {aksiyon}
