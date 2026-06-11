@@ -22,6 +22,19 @@ func main() {
 	uygulama.baslatma = uygulama.servis.VeritabaniHazirla(uygulama.ctx)
 	uygulama.BaslangicYedekKontrol()
 
+	go func() {
+		ticker := time.NewTicker(1 * time.Minute)
+		defer ticker.Stop()
+		for {
+			select {
+			case <-ticker.C:
+				uygulama.BaslangicYedekKontrol()
+			case <-uygulama.ctx.Done():
+				return
+			}
+		}
+	}()
+
 	mux := http.NewServeMux()
 	mux.Handle("/api/", uygulama)
 	mux.Handle("/", spaHandler(varliklar))
