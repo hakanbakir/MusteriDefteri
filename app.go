@@ -379,6 +379,9 @@ func (u *Uygulama) AyarKaydet(anahtar string, deger string) error {
 			default:
 				detay = deger + " Saat Yapıldı"
 			}
+		case "yedek_sayi":
+			islem = "Tutulacak Yedek Sayısı"
+			detay = deger + " Yapıldı"
 		default:
 			kisa := deger
 			if len(kisa) > 50 {
