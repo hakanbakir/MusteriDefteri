@@ -526,7 +526,6 @@ ${ia() ? `<div class="isletme">${ia()}</div>` : ""}
         <div className="-mx-5 border-t border-slate-100 dark:border-slate-800" />
         <div className="-mx-5 overflow-x-auto rounded-b-xl">
           <div className="flex items-center justify-between px-5 pb-3 pt-3">
-            <span className="text-xs text-slate-500">{filtreli.length} kayıt</span>
             <div className="flex items-center gap-3">
               <div className="flex items-center gap-2">
                 <button disabled={dSayfa <= 1} onClick={() => setDSayfa(dSayfa - 1)} className="rounded-md border border-slate-200 p-1.5 disabled:opacity-40 dark:border-slate-700"><ChevronLeft size={14} /></button>
@@ -573,7 +572,6 @@ ${ia() ? `<div class="isletme">${ia()}</div>` : ""}
           </table>
           </div>
           <div className="flex items-center justify-between px-5 pb-3 pt-3">
-            <span className="text-xs text-slate-500">{filtreli.length} kayıt</span>
             <div className="flex items-center gap-3">
               <div className="flex items-center gap-2">
                 <button disabled={dSayfa <= 1} onClick={() => setDSayfa(dSayfa - 1)} className="rounded-md border border-slate-200 p-1.5 disabled:opacity-40 dark:border-slate-700"><ChevronLeft size={14} /></button>
@@ -664,7 +662,6 @@ function CariSayfasi({ onCariAc }: { onCariAc: (id: number) => void }) {
       >
         <div className="-mx-5 border-t border-slate-100 dark:border-slate-800" />
         <div className="flex items-center justify-between pt-4 pb-3">
-          <span className="text-xs text-slate-500">{sonuc.toplam} kayıt</span>
           <div className="flex items-center gap-3">
             <div className="flex items-center gap-2">
               <button disabled={sayfa <= 1} onClick={() => setSayfa(sayfa - 1)} className="rounded-md border border-slate-200 p-1.5 disabled:opacity-40 dark:border-slate-700"><ChevronLeft size={14} /></button>
@@ -710,7 +707,6 @@ function CariSayfasi({ onCariAc }: { onCariAc: (id: number) => void }) {
         </table>
         </div>
         <div className="flex items-center justify-between px-1 pt-3">
-          <span className="text-xs text-slate-500">{sonuc.toplam} kayıt</span>
           <div className="flex items-center gap-3">
             <div className="flex items-center gap-2">
               <button disabled={sayfa <= 1} onClick={() => setSayfa(sayfa - 1)} className="rounded-md border border-slate-200 p-2 disabled:opacity-40 dark:border-slate-700"><ChevronLeft size={16} /></button>
