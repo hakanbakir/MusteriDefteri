@@ -41,7 +41,9 @@ func main() {
 
 	openWindow("http://localhost:8080", "Müşteri Defteri", 1360, 860)
 
-	server.Shutdown(context.Background())
+	ctxShutdown, cancel := context.WithTimeout(context.Background(), 3*time.Second)
+	defer cancel()
+	server.Shutdown(ctxShutdown)
 	os.Exit(0)
 }
 

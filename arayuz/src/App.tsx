@@ -174,7 +174,7 @@ function LoginSayfasi({ setKullanici, beniHatirla, lisansAc }: { setKullanici: (
           </div>
         </div>
       </div>
-        <p className="absolute bottom-4 left-0 right-0 text-center text-[13px] text-slate-500"><button onClick={lisansAc} className="cursor-pointer transition hover:text-slate-800 focus:outline-none focus:underline">Müşteri Defteri v0.4.3 — GNU Genel Kamu Lisansı v3 ile lisanslanmıştır (GNU GPLv3). Hakan Bakır ©2026</button></p>
+        <p className="absolute bottom-4 left-0 right-0 text-center text-[13px] text-slate-500"><button onClick={lisansAc} className="cursor-pointer transition hover:text-slate-800 focus:outline-none focus:underline">Müşteri Defteri v0.4.4 — GNU Genel Kamu Lisansı v3 ile lisanslanmıştır (GNU GPLv3). Hakan Bakır ©2026</button></p>
     </div>
   );
 }
@@ -273,7 +273,7 @@ export default function App() {
             Çıkış Yap
           </button>
         </div>
-        <div className={`border-t p-3 text-[10px] ${yanBarStil.divider} ${yanBarStil.aciklama}`}><button onClick={() => setLisansAcik(true)} className="cursor-pointer text-left hover:text-slate-700 dark:hover:text-slate-300">Müşteri Defteri 2026© v0.4.3</button></div>
+        <div className={`border-t p-3 text-[10px] ${yanBarStil.divider} ${yanBarStil.aciklama}`}><button onClick={() => setLisansAcik(true)} className="cursor-pointer text-left hover:text-slate-700 dark:hover:text-slate-300">Müşteri Defteri 2026© v0.4.4</button></div>
       </aside>
       <main className="flex min-w-0 flex-1 flex-col">
         <header className={`flex h-[72px] items-center justify-between pl-5 pr-2 ${ustBarStil.bg} ${ustBarStil.border} ${ustBarStil.text}`}>
