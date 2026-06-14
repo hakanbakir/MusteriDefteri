@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import type { ReactNode } from "react";
 import { Activity, ArrowLeft, BarChart3, ChevronLeft, ChevronRight, ClipboardList, Clock, CreditCard, FileSpreadsheet, FileText, HardDrive, Landmark, Mail, MapPin, Pencil, Phone, RotateCcw, Search, Settings, TrendingUp, Trash2, Users, Wallet, X } from "lucide-react";
@@ -336,8 +336,10 @@ function DashboardSayfasi({ onCariAc }: { onCariAc: (id: number) => void }) {
   }, [baslangic, bitis, filtre, sonIslemler, dSayfa, dLimit, dPreset, dSiralama, ilk]);
   const yenile = () => api.dashboardGetir(baslangic, bitis).then(setVeri);
   useEffect(() => { yenile(); }, [baslangic, bitis]);
+  const veriGuncellendiRef = useRef(() => {});
+  veriGuncellendiRef.current = () => { yenile(); api.dashboardGetir("", "").then(setChartVeri); };
   const [chartVeri, setChartVeri] = useState<Dashboard | null>(null);
-  useEffect(() => { api.dashboardGetir("", "").then(setChartVeri); }, []);
+  useEffect(() => { api.dashboardGetir("", "").then(setChartVeri); const h = () => veriGuncellendiRef.current(); window.addEventListener("veri-guncellendi", h); return () => window.removeEventListener("veri-guncellendi", h); }, []);
   const [grafikTip, setGrafikTip] = useState<"gunluk" | "aylik">("gunluk");
   const [tahsilatGrafikTip, setTahsilatGrafikTip] = useState<"gunluk" | "aylik">("gunluk");
   const filtreliHam = veri?.sonIslemler?.filter(h =>
@@ -925,6 +927,7 @@ function CariDetaySayfasi({ cariID, geriDon }: { cariID: number; geriDon: () => 
       setIslemFormAcik(false);
       setDuzenlenenHareket(null);
       yenile();
+      window.dispatchEvent(new Event("veri-guncellendi"));
     } catch (e) {
       setIslemHata((e as any)?.message || (e as any)?.toString() || "İşlem kaydedilemedi.");
     }
