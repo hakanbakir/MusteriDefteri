@@ -4,6 +4,11 @@ import { ArrowDownUp, ChevronLeft, ChevronRight, Pencil, Plus, Search, Trash2 } 
 export const para = (deger: number) =>
   new Intl.NumberFormat("tr-TR", { style: "decimal", minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(deger || 0) + "\u20BA";
 
+export const bugun = () => {
+  const d = new Date();
+  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
+};
+
 export function Panel({ baslik, aksiyon, children }: { baslik: ReactNode; aksiyon?: ReactNode; children: ReactNode }) {
   return (
     <section className="overflow-hidden rounded-xl border bg-gradient-to-br from-slate-100 via-white to-blue-100/60 shadow-sm dark:border-[var(--ui-dark-border)] dark:from-slate-900 dark:via-slate-800 dark:to-blue-950/40" style={{ borderColor: "var(--ui-border)" as string }}>
