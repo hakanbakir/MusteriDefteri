@@ -319,8 +319,6 @@ function DashboardSayfasi({ onCariAc }: { onCariAc: (id: number) => void }) {
     const s = localStorage.getItem("db");
     if (s) try {
       const o = JSON.parse(s);
-      if (o.baslangic) setBaslangic(o.baslangic);
-      if (o.bitis) setBitis(o.bitis);
       if (o.filtre) setFiltre(o.filtre);
       if (o.sonIslemler !== undefined) setSonIslemler(o.sonIslemler);
       if (o.dSayfa) setDSayfa(o.dSayfa);
