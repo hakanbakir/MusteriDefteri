@@ -98,7 +98,7 @@ func islemBatch(db *sql.DB, bas, son int) error {
 		}
 		cariID, _ := res.LastInsertId()
 
-		bakiye := 0.0
+		bakiye := 0
 
 		aralik := (simdi.Unix() - ucYilOnce.Unix()) / 10
 		for i := 0; i < 10; i++ {
@@ -106,7 +106,7 @@ func islemBatch(db *sql.DB, bas, son int) error {
 			tarih := time.Unix(dakika, 0).Format("2006-01-02T15:04")
 
 			if i == 0 {
-				tutar := float64(rand.Intn(50000-1000)+1000) + float64(rand.Intn(99))/100
+				tutar := rand.Intn(50000-1000) + 1000
 				aciklama := fmt.Sprintf("%s satışı", rastgele(aciklamaSatis))
 
 				res, err := trx.Exec("INSERT INTO satislar (cari_id, tarih, aciklama, toplam, durum) VALUES (?, ?, ?, ?, 'Aktif')",
@@ -123,11 +123,11 @@ func islemBatch(db *sql.DB, bas, son int) error {
 				}
 				bakiye += tutar
 			} else {
-				maks := int(bakiye)
+				maks := bakiye
 				if maks < 1 {
 					maks = 1
 				}
-				tutar := float64(rand.Intn(maks)+1) + float64(rand.Intn(99))/100
+				tutar := rand.Intn(maks) + 1
 				if tutar > bakiye {
 					tutar = bakiye
 				}
