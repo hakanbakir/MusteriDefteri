@@ -685,10 +685,10 @@ function CariSayfasi({ onCariAc }: { onCariAc: (id: number) => void }) {
           <p className="text-[11px] text-slate-400">{sonuc.toplam} kayıt</p>
           <div className="flex items-center gap-3">
             <div className="flex items-center gap-2">
-              <button type="button" onClick={() => setCBlur(b => !b)} className={"rounded-md border border-slate-200 p-1.5 text-slate-400 transition hover:bg-slate-100 dark:border-slate-700 dark:text-slate-500 dark:hover:bg-slate-700"}>{cBlur ? <EyeOff size={14} /> : <Eye size={14} />}</button>
-              <button disabled={sayfa <= 1} onClick={() => setSayfa(sayfa - 1)} className="rounded-md border border-slate-200 p-1.5 disabled:opacity-40 dark:border-slate-700"><ChevronLeft size={14} /></button>
-              <span className="min-w-16 text-center text-xs text-slate-500">{sayfa} / {Math.max(1, Math.ceil(sonuc.toplam / limit))}</span>
-              <button disabled={sayfa >= Math.max(1, Math.ceil(sonuc.toplam / limit))} onClick={() => setSayfa(sayfa + 1)} className="rounded-md border border-slate-200 p-1.5 disabled:opacity-40 dark:border-slate-700"><ChevronRight size={14} /></button>
+              <button type="button" onClick={() => setCBlur(b => !b)} className={"inline-flex items-center justify-center rounded-md border border-slate-200 p-1.5 text-slate-400 transition hover:bg-slate-100 dark:border-slate-700 dark:text-slate-500 dark:hover:bg-slate-700"}>{cBlur ? <EyeOff size={14} /> : <Eye size={14} />}</button>
+              <button disabled={sayfa <= 1} onClick={() => setSayfa(sayfa - 1)} className="inline-flex items-center justify-center rounded-md border border-slate-200 p-1.5 disabled:opacity-40 dark:border-slate-700"><ChevronLeft size={14} /></button>
+              <span className="flex min-w-16 items-center justify-center text-xs text-slate-500">{sayfa} / {Math.max(1, Math.ceil(sonuc.toplam / limit))}</span>
+              <button disabled={sayfa >= Math.max(1, Math.ceil(sonuc.toplam / limit))} onClick={() => setSayfa(sayfa + 1)} className="inline-flex items-center justify-center rounded-md border border-slate-200 p-1.5 disabled:opacity-40 dark:border-slate-700"><ChevronRight size={14} /></button>
             </div>
             <span className="text-xs text-slate-300">|</span>
             <div className="flex items-center gap-2 text-xs text-slate-500">
@@ -728,14 +728,14 @@ function CariSayfasi({ onCariAc }: { onCariAc: (id: number) => void }) {
           </tbody>
         </table>
         </div>
-        <div className="flex items-center justify-between px-1 pt-3">
+        <div className="flex items-center justify-between pt-3 pb-4">
           <p className="text-[11px] text-slate-400">{sonuc.toplam} kayıt</p>
           <div className="flex items-center gap-3">
             <div className="flex items-center gap-2">
-              <button type="button" onClick={() => setCBlur(b => !b)} className={"rounded-md border border-slate-200 p-1.5 text-slate-400 transition hover:bg-slate-100 dark:border-slate-700 dark:text-slate-500 dark:hover:bg-slate-700"}>{cBlur ? <EyeOff size={14} /> : <Eye size={14} />}</button>
-              <button disabled={sayfa <= 1} onClick={() => setSayfa(sayfa - 1)} className="rounded-md border border-slate-200 p-2 disabled:opacity-40 dark:border-slate-700"><ChevronLeft size={16} /></button>
-              <span className="min-w-16 text-center text-sm text-slate-500">{sayfa} / {Math.max(1, Math.ceil(sonuc.toplam / limit))}</span>
-              <button disabled={sayfa >= Math.max(1, Math.ceil(sonuc.toplam / limit))} onClick={() => setSayfa(sayfa + 1)} className="rounded-md border border-slate-200 p-2 disabled:opacity-40 dark:border-slate-700"><ChevronRight size={16} /></button>
+              <button type="button" onClick={() => setCBlur(b => !b)} className={"inline-flex items-center justify-center rounded-md border border-slate-200 p-1.5 text-slate-400 transition hover:bg-slate-100 dark:border-slate-700 dark:text-slate-500 dark:hover:bg-slate-700"}>{cBlur ? <EyeOff size={14} /> : <Eye size={14} />}</button>
+              <button disabled={sayfa <= 1} onClick={() => setSayfa(sayfa - 1)} className="inline-flex items-center justify-center rounded-md border border-slate-200 p-1.5 disabled:opacity-40 dark:border-slate-700"><ChevronLeft size={14} /></button>
+              <span className="flex min-w-16 items-center justify-center text-xs text-slate-500">{sayfa} / {Math.max(1, Math.ceil(sonuc.toplam / limit))}</span>
+              <button disabled={sayfa >= Math.max(1, Math.ceil(sonuc.toplam / limit))} onClick={() => setSayfa(sayfa + 1)} className="inline-flex items-center justify-center rounded-md border border-slate-200 p-1.5 disabled:opacity-40 dark:border-slate-700"><ChevronRight size={14} /></button>
             </div>
             <span className="text-xs text-slate-300">|</span>
             <div className="flex items-center gap-2 text-xs text-slate-500">
