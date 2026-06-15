@@ -2,7 +2,7 @@ import { ReactNode } from "react";
 import { ArrowDownUp, ChevronLeft, ChevronRight, Pencil, Plus, Search, Trash2 } from "lucide-react";
 
 export const para = (deger: number) =>
-  new Intl.NumberFormat("tr-TR", { style: "decimal", minimumFractionDigits: 0, maximumFractionDigits: 0 }).format(deger || 0) + "\u20BA";
+  new Intl.NumberFormat("tr-TR", { style: "decimal", minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(deger || 0) + "\u20BA";
 
 export function Panel({ baslik, aksiyon, children }: { baslik: ReactNode; aksiyon?: ReactNode; children: ReactNode }) {
   return (
