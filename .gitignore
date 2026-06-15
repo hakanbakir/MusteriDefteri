@@ -4,3 +4,7 @@ arayuz/dist/
 arayuz/node_modules/
 *.syso
 seed.exe
+
+musteri_defteri.db
+musteri_defteri.db-shm
+musteri_defteri.db-wal

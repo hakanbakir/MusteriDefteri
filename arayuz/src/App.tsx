@@ -323,7 +323,7 @@ function DashboardSayfasi({ onCariAc }: { onCariAc: (id: number) => void }) {
       if (o.sonIslemler !== undefined) setSonIslemler(o.sonIslemler);
       if (o.dSayfa) setDSayfa(o.dSayfa);
       if (o.dLimit) setDLimit(o.dLimit);
-      if (o.dPreset) setDPreset(o.dPreset);
+      if (o.dPreset !== undefined) setDPreset(o.dPreset);
       if (o.dSiralama) setDSiralama(o.dSiralama);
       if (o.baslangic) setBaslangic(o.baslangic);
       if (o.bitis) setBitis(o.bitis);
