@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { ReactNode, useState } from "react";
 import { ArrowDownUp, ChevronLeft, ChevronRight, Pencil, Plus, Search, Trash2 } from "lucide-react";
 
 export const para = (deger: number) =>
@@ -76,4 +76,9 @@ export function Sayfalama({ sayfa, toplam, limit, onSayfa }: { sayfa: number; to
       </div>
     </div>
   );
+}
+
+export function GizliTutar({ deger, gizle }: { deger: number; gizle: boolean }) {
+  if (gizle) return <span>*,**</span>;
+  return <>{para(deger)}</>;
 }
